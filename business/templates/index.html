@@ -1,0 +1,32 @@
+{% extends "base.html" %}
+
+{% block metas %}
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+{% endblock %}
+
+{% block app_content %}
+
+    <div class="app_content" style=text-align:center;> 
+        <h1> MakanApa? Bebas! </h1>
+        This web application will help you choose where to eat local <br>
+        <br>
+        Ready to get started? 
+        <br>
+        Tell us where you are eating today 
+        <br>
+        <br>
+        <form action="" method="post">
+            {{ form.hidden_tag() }}
+            <p>
+                {{ form.location(size=35) }}<br>
+                {% for error in form.location.errors %}
+                <span style="color: red;">[{{ error }}]</span>
+                {% endfor %}
+            </p>
+            <p>
+            {{ form.submit() }}
+            </p>
+        </form>
+    </div>
+    
+{% endblock %}

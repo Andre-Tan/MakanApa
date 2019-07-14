@@ -1,0 +1,21 @@
+{% extends "base.html" %}
+{% import 'bootstrap/wtf.html' as wtf %}
+
+{% block app_content %}
+    <div class="app_content" style=text-align:center;> 
+        <h2>Go to <u>{{ restaurant.name }}</u>!</h2>
+        
+        <img src={{ restaurant.featured_image }} alt={{ restaurant.name }} style=width:75%;> <br> <br>
+        
+        It is a {{ restaurant.cuisines }} restaurant with average cost for two of IDR {{ restaurant.average_cost_for_two }} <br>
+        
+        <br>
+        Click <a href= {{ restaurant.url }}>here</a> to see the restaurant in Zomato <br>
+        Click <a href= {{ restaurant.menu_url }}>here</a> to see the menu in Zomato <br>
+        <br>
+        
+        <div class="col">
+            {{ wtf.quick_form(form) }}
+        </div>
+    </div>
+{% endblock %}
